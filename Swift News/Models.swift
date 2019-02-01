@@ -13,11 +13,11 @@ struct ServerResponse: Decodable {
 }
 
 struct PlaylistItem: Decodable {
-	var id: String
-	var title: String
-	var description: String
-	var imageUrl: URL
-	var publishedDate: String
+	let id: String
+	let title: String
+	let description: String
+	let imageUrl: URL
+	let publishedDate: String
 	
 	private enum ItemCodingKeys: String, CodingKey {
 		case id

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PlaylistItemVC.swift
 //  Swift News
 //
 //  Created by Marc Aupont on 12/9/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class PlaylistItemVC: UIViewController {
 
 	@IBOutlet weak var tableView: UITableView!
 	
@@ -30,10 +30,6 @@ class ViewController: UIViewController {
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search Swift News"
 		definesPresentationContext = true
-		
-//		textView.dataDetectorTypes = [.link]
-//		textView.isEditable = false
-//		textView.isSelectable = true
 		
 		downloadVideoData()
 	}
@@ -62,20 +58,12 @@ class ViewController: UIViewController {
 				print(error.localizedDescription)
 			}
 			
-			
-//			do {
-//				let jsonData = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers)
-//				print(jsonData)
-//			} catch {
-//				print(error.localizedDescription)
-//			}
-			
 		}
 		task.resume()
 	}
 }
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension PlaylistItemVC: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return filteredPlaylistItems.count
@@ -103,7 +91,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 }
 
-extension ViewController: UISearchResultsUpdating {
+extension PlaylistItemVC: UISearchResultsUpdating {
 	
 	func updateSearchResults(for searchController: UISearchController) {
 		if let text = searchController.searchBar.text, text.count > 0 {
