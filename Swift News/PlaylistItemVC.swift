@@ -22,10 +22,9 @@ class PlaylistItemVC: UIViewController {
 		tableView.delegate = self
 		tableView.dataSource = self
 		
-		let searchController = UISearchController(searchResultsController: nil)
-		navigationItem.searchController = searchController
-		
 		// Setup the Search Controller
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search Swift News"
