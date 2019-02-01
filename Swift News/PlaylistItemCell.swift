@@ -23,6 +23,4 @@ class PlaylistItemCell: UITableViewCell {
 		playlistItemImageView.sd_setImage(with: item.imageUrl, placeholderImage: nil, options: .highPriority)
 		playlistItemTitleLabel.text = item.title
 	}
-	
-
 }
