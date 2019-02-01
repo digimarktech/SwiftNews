@@ -48,11 +48,13 @@ class ViewController: UIViewController {
 			guard let data = data else { return }
 			
 			let decoder = JSONDecoder()
+			decoder.dateDecodingStrategy = .iso8601
 			do {
 				let response = try decoder.decode(ServerResponse.self, from: data)
 				DispatchQueue.main.async {
 					for item in response.items {
 						self.playlistItems.append(item)
+						self.filteredPlaylistItems.append(item)
 					}
 					self.tableView.reloadData()
 				}
@@ -76,7 +78,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return playlistItems.count
+		return filteredPlaylistItems.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,22 +87,34 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 			fatalError("Could not dequeue cell")
 		}
 		
-		let playlistItem = playlistItems[indexPath.row]
+		let playlistItem = filteredPlaylistItems[indexPath.row]
 		
 		cell.configureCell(from: playlistItem)
 		
 		return cell
 	}
 	
-//	func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//		return 240
-//	}
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		guard let playlistItemDetailVC = storyboard?.instantiateViewController(withIdentifier: "PlaylistItemDetailVC") as? PlaylistItemDetailVC else {
+			return
+		}
+		playlistItemDetailVC.playlistItem = playlistItems[indexPath.row]
+		navigationController?.pushViewController(playlistItemDetailVC, animated: true)
+	}
 }
 
 extension ViewController: UISearchResultsUpdating {
 	
 	func updateSearchResults(for searchController: UISearchController) {
+		if let text = searchController.searchBar.text, text.count > 0 {
+			filteredPlaylistItems = playlistItems.filter {
+				$0.title.contains(text) || $0.description.contains(text)
+			}
+		} else {
+			filteredPlaylistItems = playlistItems
+		}
 		
+		tableView.reloadData()
 	}
 }
 

@@ -14,6 +14,7 @@
 		BD40B84121BDD0F9007C9FC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD40B83F21BDD0F9007C9FC2 /* LaunchScreen.storyboard */; };
 		BD40B84B21BDF963007C9FC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B84A21BDF963007C9FC2 /* Models.swift */; };
 		BD9040BC2203E3DE009A4A60 /* PlaylistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9040BB2203E3DE009A4A60 /* PlaylistItemCell.swift */; };
+		BD9040BE2203FEBF009A4A60 /* PlaylistItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9040BD2203FEBF009A4A60 /* PlaylistItemDetailVC.swift */; };
 		D3BB34B8E1AC4AD6D5A85A60 /* Pods_Swift_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A071CBE5DECE4A7952C72641 /* Pods_Swift_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		BD40B84221BDD0F9007C9FC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD40B84A21BDF963007C9FC2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BD9040BB2203E3DE009A4A60 /* PlaylistItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemCell.swift; sourceTree = "<group>"; };
+		BD9040BD2203FEBF009A4A60 /* PlaylistItemDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemDetailVC.swift; sourceTree = "<group>"; };
 		FCD15E08A0EA99B182F49539 /* Pods-Swift News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift News/Pods-Swift News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				BD40B83821BDD0F7007C9FC2 /* ViewController.swift */,
 				BD9040BB2203E3DE009A4A60 /* PlaylistItemCell.swift */,
 				BD40B83A21BDD0F7007C9FC2 /* Main.storyboard */,
+				BD9040BD2203FEBF009A4A60 /* PlaylistItemDetailVC.swift */,
 				BD40B83D21BDD0F9007C9FC2 /* Assets.xcassets */,
 				BD40B83F21BDD0F9007C9FC2 /* LaunchScreen.storyboard */,
 				BD40B84221BDD0F9007C9FC2 /* Info.plist */,
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9040BE2203FEBF009A4A60 /* PlaylistItemDetailVC.swift in Sources */,
 				BD40B84B21BDF963007C9FC2 /* Models.swift in Sources */,
 				BD40B83921BDD0F7007C9FC2 /* ViewController.swift in Sources */,
 				BD9040BC2203E3DE009A4A60 /* PlaylistItemCell.swift in Sources */,

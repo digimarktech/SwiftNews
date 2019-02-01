@@ -17,6 +17,7 @@ struct PlaylistItem: Decodable {
 	var title: String
 	var description: String
 	var imageUrl: URL
+	var publishedDate: String
 	
 	private enum ItemCodingKeys: String, CodingKey {
 		case id
@@ -28,6 +29,7 @@ struct PlaylistItem: Decodable {
 		case title
 		case description
 		case thumbnails
+		case publishedDate = "publishedAt"
 	}
 	
 	private enum ThumbNailsCodingKeys: String, CodingKey {
@@ -44,6 +46,7 @@ struct PlaylistItem: Decodable {
 		let snippetContainer = try container.nestedContainer(keyedBy: SnippetCodingKeys.self, forKey: .snippet)
 		title = try snippetContainer.decode(String.self, forKey: .title)
 		description = try snippetContainer.decode(String.self, forKey: .description)
+		publishedDate = try snippetContainer.decode(String.self, forKey: .publishedDate)
 		let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbNailsCodingKeys.self, forKey: .thumbnails)
 		let standardContainer = try thumbnailsContainer.nestedContainer(keyedBy: StandardCodingKeys.self, forKey: .standard)
 		imageUrl = try standardContainer.decode(URL.self, forKey: .imageUrl)

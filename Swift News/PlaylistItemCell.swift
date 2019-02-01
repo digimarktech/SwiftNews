@@ -13,8 +13,6 @@ class PlaylistItemCell: UITableViewCell {
 
 	@IBOutlet weak var playlistItemImageView: UIImageView!
 	@IBOutlet weak var playlistItemTitleLabel: UILabel!
-	@IBOutlet weak var playlistItemEpisodeNumberLabel: UILabel!
-	@IBOutlet weak var playlistItemPublishDateLabel: UILabel!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
