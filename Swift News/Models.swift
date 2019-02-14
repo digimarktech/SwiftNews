@@ -58,5 +58,99 @@ struct PlaylistItem: Decodable {
 		return secondString
 	}
 	
+	
+}
+
+extension String {
+	func timeAgoDisplay() -> String {
+		
+		let f:DateFormatter = DateFormatter()
+		
+		f.timeZone = NSTimeZone.local
+		
+		f.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+		
+		let now = f.string(from: NSDate() as Date)
+		
+		let startDate = f.date(from: self)
+		
+		let endDate = f.date(from: now)
+		
+		let calendar: NSCalendar = NSCalendar.current as NSCalendar
+		
+		let calendarUnits = NSCalendar.Unit.weekOfMonth.union( NSCalendar.Unit.day).union(NSCalendar.Unit.hour).union(NSCalendar.Unit.minute).union(NSCalendar.Unit.second).union(NSCalendar.Unit.month).union(NSCalendar.Unit.year)
+		
+		let dateComponents = calendar.components(calendarUnits, from: startDate!, to: endDate!, options: [])
+		
+		let weeks = abs(Int32(dateComponents.weekOfMonth!))
+		let days = abs(Int32(dateComponents.day!))
+		let hours = abs(Int32(dateComponents.hour!))
+		let min = abs(Int32(dateComponents.minute!))
+		let sec = abs(Int32(dateComponents.second!))
+		let months = abs(Int32(dateComponents.month!))
+		let years = abs(Int32(dateComponents.year!))
+		
+		var timeAgo = ""
+		if (sec > 0){
+			if (sec > 1) {
+				timeAgo = "\(sec) Seconds Ago"
+				
+			} else {
+				timeAgo = "\(sec) Second Ago"
+			}
+			
+		}
+		if (min > 0){
+			if (min > 1) {
+				timeAgo = "\(min) Minutes Ago"
+			} else {
+				timeAgo = "\(min) Minute Ago"
+			}
+		}
+		
+		if(hours > 0){
+			if (hours > 1) {
+				timeAgo = "\(hours) Hours Ago"
+			} else {
+				timeAgo = "\(hours) Hour Ago"
+			}
+		}
+		if (days > 0) {
+			if (days > 1) {
+				timeAgo = "\(days) Days Ago"
+			} else {
+				timeAgo = "\(days) Day Ago"
+			}
+		}
+		
+		if(weeks > 0){
+			if (weeks > 1) {
+				timeAgo = "\(weeks) Weeks Ago"
+			} else {
+				timeAgo = "\(weeks) Week Ago"
+			}
+		}
+		
+		if(months > 0){
+			if (months > 1) {
+				timeAgo = "\(months) months Ago"
+			} else {
+				timeAgo = "\(months) month Ago"
+			}
+		}
+		
+		if(years > 0){
+			if (years > 1) {
+				timeAgo = "\(years) years Ago"
+			} else {
+				timeAgo = "\(years) year Ago"
+			}
+			
+		}
+		
+		print("timeAgo is===> \(timeAgo)")
+		return timeAgo;
+		
+	}
 }
 

@@ -13,6 +13,7 @@ class PlaylistItemCell: UITableViewCell {
 
 	@IBOutlet weak var playlistItemImageView: UIImageView!
 	@IBOutlet weak var playlistItemTitleLabel: UILabel!
+	@IBOutlet weak var playlistItemDateLabel: UILabel!
 	
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +23,6 @@ class PlaylistItemCell: UITableViewCell {
 	func configureCell(from item: PlaylistItem) {
 		playlistItemImageView.sd_setImage(with: item.imageUrl, placeholderImage: nil, options: .highPriority)
 		playlistItemTitleLabel.text = item.sanitizedTitle()
+		playlistItemDateLabel.text = item.publishedDate.timeAgoDisplay()
 	}
 }

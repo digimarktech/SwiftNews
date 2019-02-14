@@ -18,7 +18,7 @@ class PlaylistItemVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		tableView.rowHeight = UITableView.automaticDimension
-		tableView.estimatedRowHeight = 260
+		tableView.estimatedRowHeight = 359
 		tableView.delegate = self
 		tableView.dataSource = self
 		
@@ -87,6 +87,10 @@ extension PlaylistItemVC: UITableViewDelegate, UITableViewDataSource {
 		}
 		playlistItemDetailVC.playlistItem = playlistItems[indexPath.row]
 		navigationController?.pushViewController(playlistItemDetailVC, animated: true)
+	}
+	
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 359.0
 	}
 }
 
