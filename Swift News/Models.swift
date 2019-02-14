@@ -51,5 +51,12 @@ struct PlaylistItem: Decodable {
 		let standardContainer = try thumbnailsContainer.nestedContainer(keyedBy: StandardCodingKeys.self, forKey: .standard)
 		imageUrl = try standardContainer.decode(URL.self, forKey: .imageUrl)
 	}
+	
+	func sanitizedTitle() -> String? {
+		let splitTitle = title.split(separator: "-")
+		let secondString = String(splitTitle[1].trimmingCharacters(in: .whitespaces))
+		return secondString
+	}
+	
 }
 

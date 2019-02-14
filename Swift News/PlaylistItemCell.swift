@@ -21,6 +21,6 @@ class PlaylistItemCell: UITableViewCell {
 
 	func configureCell(from item: PlaylistItem) {
 		playlistItemImageView.sd_setImage(with: item.imageUrl, placeholderImage: nil, options: .highPriority)
-		playlistItemTitleLabel.text = item.title
+		playlistItemTitleLabel.text = item.sanitizedTitle()
 	}
 }
