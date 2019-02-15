@@ -7,4 +7,6 @@ target 'Swift News' do
 
   # Pods for Swift News
 	pod 'SDWebImage', '~> 4.0'
+	pod 'lottie-ios'
+	pod 'YouTubePlayer'
 end

@@ -1,18 +1,26 @@
 PODS:
+  - lottie-ios (2.5.2)
   - SDWebImage (4.4.2):
     - SDWebImage/Core (= 4.4.2)
   - SDWebImage/Core (4.4.2)
+  - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
+  - lottie-ios
   - SDWebImage (~> 4.0)
+  - YouTubePlayer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - lottie-ios
     - SDWebImage
+    - YouTubePlayer
 
 SPEC CHECKSUMS:
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
   SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: b5e1d01b0a2a47076bfa5076aab160f9852fa2d2
+PODFILE CHECKSUM: 126cf4e9b69a658133f948fbd2dce36bef1e72ba
 
 COCOAPODS: 1.5.3
