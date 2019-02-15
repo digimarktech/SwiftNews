@@ -93,6 +93,7 @@
                     <navigationItem key="navigationItem" id="hce-y6-WGU"/>
                     <connections>
                         <outlet property="tableView" destination="AtD-bY-5Nm" id="8Z4-fV-y6D"/>
+                        <segue destination="EE7-Vf-ASa" kind="show" id="hWm-1T-CWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -107,26 +108,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yBN-yL-5tF">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES" lookupSuggestion="YES"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qnu-KN-w9g" userLabel="Video View" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                <rect key="frame" x="0.0" y="64" width="375" height="211"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Qnu-KN-w9g" secondAttribute="height" multiplier="16:9" id="mAL-nI-BRa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yBN-yL-5tF" firstAttribute="leading" secondItem="Za7-qm-HNv" secondAttribute="leading" id="45W-rM-mSp"/>
-                            <constraint firstItem="yBN-yL-5tF" firstAttribute="trailing" secondItem="Za7-qm-HNv" secondAttribute="trailing" id="Ep2-WO-gYb"/>
-                            <constraint firstItem="yBN-yL-5tF" firstAttribute="top" secondItem="Za7-qm-HNv" secondAttribute="top" id="bdT-8z-psM"/>
-                            <constraint firstItem="yBN-yL-5tF" firstAttribute="bottom" secondItem="Za7-qm-HNv" secondAttribute="bottom" id="shE-pN-fIw"/>
+                            <constraint firstItem="Qnu-KN-w9g" firstAttribute="leading" secondItem="Za7-qm-HNv" secondAttribute="leading" id="hvE-xo-Op8"/>
+                            <constraint firstItem="Qnu-KN-w9g" firstAttribute="top" secondItem="Za7-qm-HNv" secondAttribute="top" id="i8e-rk-UaY"/>
+                            <constraint firstItem="Qnu-KN-w9g" firstAttribute="centerX" secondItem="v4Y-bQ-0dt" secondAttribute="centerX" id="mk2-Dx-WIG"/>
+                            <constraint firstItem="Qnu-KN-w9g" firstAttribute="trailing" secondItem="Za7-qm-HNv" secondAttribute="trailing" id="pSN-rD-Bp3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Za7-qm-HNv"/>
                     </view>
                     <connections>
-                        <outlet property="textView" destination="yBN-yL-5tF" id="bch-Qa-qes"/>
+                        <outlet property="playerView" destination="Qnu-KN-w9g" id="4f3-QW-cUz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbU-xx-hFM" userLabel="First Responder" sceneMemberID="firstResponder"/>

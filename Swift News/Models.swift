@@ -18,11 +18,11 @@ struct PlaylistItem: Decodable {
 	let description: String
 	let imageUrl: URL
 	let publishedDate: String
+	let videoId: String
 	
 	private enum ItemCodingKeys: String, CodingKey {
 		case id
 		case snippet
-		case resourceId
 	}
 	
 	private enum SnippetCodingKeys: String, CodingKey {
@@ -30,6 +30,7 @@ struct PlaylistItem: Decodable {
 		case description
 		case thumbnails
 		case publishedDate = "publishedAt"
+		case resourceId
 	}
 	
 	private enum ThumbNailsCodingKeys: String, CodingKey {
@@ -38,6 +39,10 @@ struct PlaylistItem: Decodable {
 	
 	private enum StandardCodingKeys: String, CodingKey {
 		case imageUrl = "url"
+	}
+	
+	private enum ResourceIdCodingKeys: String, CodingKey {
+		case videoId
 	}
 	
 	init(from decoder: Decoder) throws {
@@ -50,6 +55,8 @@ struct PlaylistItem: Decodable {
 		let thumbnailsContainer = try snippetContainer.nestedContainer(keyedBy: ThumbNailsCodingKeys.self, forKey: .thumbnails)
 		let standardContainer = try thumbnailsContainer.nestedContainer(keyedBy: StandardCodingKeys.self, forKey: .standard)
 		imageUrl = try standardContainer.decode(URL.self, forKey: .imageUrl)
+		let resourceContainer = try snippetContainer.nestedContainer(keyedBy: ResourceIdCodingKeys.self, forKey: .resourceId)
+		videoId = try resourceContainer.decode(String.self, forKey: .videoId)
 	}
 	
 	func sanitizedTitle() -> String? {
@@ -57,7 +64,6 @@ struct PlaylistItem: Decodable {
 		let secondString = String(splitTitle[1].trimmingCharacters(in: .whitespaces))
 		return secondString
 	}
-	
 	
 }
 
@@ -91,7 +97,7 @@ extension String {
 		let years = abs(Int32(dateComponents.year!))
 		
 		var timeAgo = ""
-		if (sec > 0){
+		if sec > 0 {
 			if (sec > 1) {
 				timeAgo = "\(sec) Seconds Ago"
 				
@@ -100,7 +106,7 @@ extension String {
 			}
 			
 		}
-		if (min > 0){
+		if min > 0 {
 			if (min > 1) {
 				timeAgo = "\(min) Minutes Ago"
 			} else {
@@ -108,14 +114,14 @@ extension String {
 			}
 		}
 		
-		if(hours > 0){
+		if hours > 0 {
 			if (hours > 1) {
 				timeAgo = "\(hours) Hours Ago"
 			} else {
 				timeAgo = "\(hours) Hour Ago"
 			}
 		}
-		if (days > 0) {
+		if days > 0 {
 			if (days > 1) {
 				timeAgo = "\(days) Days Ago"
 			} else {
@@ -123,7 +129,7 @@ extension String {
 			}
 		}
 		
-		if(weeks > 0){
+		if weeks > 0 {
 			if (weeks > 1) {
 				timeAgo = "\(weeks) Weeks Ago"
 			} else {
@@ -131,7 +137,7 @@ extension String {
 			}
 		}
 		
-		if(months > 0){
+		if months > 0 {
 			if (months > 1) {
 				timeAgo = "\(months) months Ago"
 			} else {
@@ -139,7 +145,7 @@ extension String {
 			}
 		}
 		
-		if(years > 0){
+		if years > 0 {
 			if (years > 1) {
 				timeAgo = "\(years) years Ago"
 			} else {
@@ -148,7 +154,6 @@ extension String {
 			
 		}
 		
-		print("timeAgo is===> \(timeAgo)")
 		return timeAgo;
 		
 	}

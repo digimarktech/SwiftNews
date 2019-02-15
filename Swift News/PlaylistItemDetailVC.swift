@@ -7,18 +7,26 @@
 //
 
 import UIKit
+import YouTubePlayer
 
 class PlaylistItemDetailVC: UIViewController {
 	
+	@IBOutlet private weak var playerView: YouTubePlayerView!
+	
 	var playlistItem: PlaylistItem!
-
-	@IBOutlet weak var textView: UITextView!
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
-
-		textView.text = playlistItem.description
-		textView.contentInsetAdjustmentBehavior = .never
+		
+		playerView.delegate = self
+		playerView.loadVideoID(playlistItem.videoId)
     }
 
+}
+
+extension PlaylistItemDetailVC: YouTubePlayerDelegate {
+	
+	func playerReady(_ videoPlayer: YouTubePlayerView) {
+		
+	}
 }
