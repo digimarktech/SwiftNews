@@ -43,7 +43,7 @@ class PlaylistItemVC: UIViewController {
 			guard let data = data else { return }
 			
 			let decoder = JSONDecoder()
-			decoder.dateDecodingStrategy = .iso8601
+			//decoder.dateDecodingStrategy = .iso8601
 			do {
 				let response = try decoder.decode(ServerResponse.self, from: data)
 				DispatchQueue.main.async {

@@ -36,23 +36,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift 5 in Xcode 10.2, Type Aliases, Loops, Hiring and so much more" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hY-kJ-jN4">
-                                                    <rect key="frame" x="16" y="281.5" width="285" height="41"/>
+                                                    <rect key="frame" x="16" y="281.5" width="343" height="41"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="27b-Kc-So6">
-                                                    <rect key="frame" x="319" y="281.5" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="9H0-LG-tIq"/>
-                                                        <constraint firstAttribute="width" constant="40" id="QaI-9w-tsK"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 months ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-U6-9Q1">
-                                                    <rect key="frame" x="16" y="330.5" width="153" height="17"/>
+                                                    <rect key="frame" x="16" y="330.5" width="343" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="17" id="Bd7-QX-eaF"/>
-                                                        <constraint firstAttribute="width" constant="153" id="TRf-4R-cpW"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -61,15 +53,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2bN-YO-ZaO" firstAttribute="top" secondItem="Ydv-8b-7ti" secondAttribute="top" constant="12" id="1Q8-E6-XMM"/>
-                                                <constraint firstItem="27b-Kc-So6" firstAttribute="leading" secondItem="1hY-kJ-jN4" secondAttribute="trailing" constant="18" id="41S-Dp-Stx"/>
+                                                <constraint firstAttribute="trailing" secondItem="1hY-kJ-jN4" secondAttribute="trailing" constant="16" id="4bU-b8-sBs"/>
                                                 <constraint firstItem="Ekc-U6-9Q1" firstAttribute="leading" secondItem="Ydv-8b-7ti" secondAttribute="leading" constant="16" id="BjF-3h-yEw"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ekc-U6-9Q1" secondAttribute="trailing" constant="16" id="Hqc-a4-lBl"/>
                                                 <constraint firstAttribute="trailing" secondItem="2bN-YO-ZaO" secondAttribute="trailing" constant="16" id="L7Q-1c-wNJ"/>
                                                 <constraint firstItem="2bN-YO-ZaO" firstAttribute="leading" secondItem="Ydv-8b-7ti" secondAttribute="leading" constant="16" id="MuZ-2F-8wl"/>
                                                 <constraint firstItem="Ekc-U6-9Q1" firstAttribute="top" secondItem="1hY-kJ-jN4" secondAttribute="bottom" constant="8" id="QOt-Rs-eYZ"/>
                                                 <constraint firstItem="1hY-kJ-jN4" firstAttribute="top" secondItem="2bN-YO-ZaO" secondAttribute="bottom" constant="12" id="pjw-FH-HW3"/>
-                                                <constraint firstAttribute="trailing" secondItem="27b-Kc-So6" secondAttribute="trailing" constant="16" id="px5-Om-SGe"/>
                                                 <constraint firstItem="1hY-kJ-jN4" firstAttribute="leading" secondItem="Ydv-8b-7ti" secondAttribute="leading" constant="16" id="qaf-hx-yy9"/>
-                                                <constraint firstItem="27b-Kc-So6" firstAttribute="top" secondItem="2bN-YO-ZaO" secondAttribute="bottom" constant="12" id="uqV-zk-qBz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -93,7 +84,7 @@
                     <navigationItem key="navigationItem" id="hce-y6-WGU"/>
                     <connections>
                         <outlet property="tableView" destination="AtD-bY-5Nm" id="8Z4-fV-y6D"/>
-                        <segue destination="EE7-Vf-ASa" kind="show" id="hWm-1T-CWP"/>
+                        <segue destination="EE7-Vf-ASa" kind="show" identifier="showDetails" id="hWm-1T-CWP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,18 +106,31 @@
                                     <constraint firstAttribute="width" secondItem="Qnu-KN-w9g" secondAttribute="height" multiplier="16:9" id="mAL-nI-BRa"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kw7-ck-ccz">
+                                <rect key="frame" x="0.0" y="275" width="375" height="392"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="kw7-ck-ccz" firstAttribute="leading" secondItem="Za7-qm-HNv" secondAttribute="leading" id="9LV-XH-rOt"/>
+                            <constraint firstItem="kw7-ck-ccz" firstAttribute="bottom" secondItem="Za7-qm-HNv" secondAttribute="bottom" id="FBf-nd-Bfy"/>
                             <constraint firstItem="Qnu-KN-w9g" firstAttribute="leading" secondItem="Za7-qm-HNv" secondAttribute="leading" id="hvE-xo-Op8"/>
                             <constraint firstItem="Qnu-KN-w9g" firstAttribute="top" secondItem="Za7-qm-HNv" secondAttribute="top" id="i8e-rk-UaY"/>
                             <constraint firstItem="Qnu-KN-w9g" firstAttribute="centerX" secondItem="v4Y-bQ-0dt" secondAttribute="centerX" id="mk2-Dx-WIG"/>
+                            <constraint firstItem="kw7-ck-ccz" firstAttribute="trailing" secondItem="Za7-qm-HNv" secondAttribute="trailing" id="ncs-S0-9aq"/>
                             <constraint firstItem="Qnu-KN-w9g" firstAttribute="trailing" secondItem="Za7-qm-HNv" secondAttribute="trailing" id="pSN-rD-Bp3"/>
+                            <constraint firstItem="kw7-ck-ccz" firstAttribute="top" secondItem="Qnu-KN-w9g" secondAttribute="bottom" id="z4I-AT-wsu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Za7-qm-HNv"/>
                     </view>
                     <connections>
                         <outlet property="playerView" destination="Qnu-KN-w9g" id="4f3-QW-cUz"/>
+                        <outlet property="textView" destination="kw7-ck-ccz" id="Gu8-A7-HKV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbU-xx-hFM" userLabel="First Responder" sceneMemberID="firstResponder"/>

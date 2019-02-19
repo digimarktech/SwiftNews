@@ -12,6 +12,7 @@ import YouTubePlayer
 class PlaylistItemDetailVC: UIViewController {
 	
 	@IBOutlet private weak var playerView: YouTubePlayerView!
+	@IBOutlet weak var textView: UITextView!
 	
 	var playlistItem: PlaylistItem!
 	
@@ -20,6 +21,7 @@ class PlaylistItemDetailVC: UIViewController {
 		
 		playerView.delegate = self
 		playerView.loadVideoID(playlistItem.videoId)
+		textView.text = playlistItem.description
     }
 
 }

@@ -15,6 +15,7 @@
 		BD40B84B21BDF963007C9FC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD40B84A21BDF963007C9FC2 /* Models.swift */; };
 		BD9040BC2203E3DE009A4A60 /* PlaylistItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9040BB2203E3DE009A4A60 /* PlaylistItemCell.swift */; };
 		BD9040BE2203FEBF009A4A60 /* PlaylistItemDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9040BD2203FEBF009A4A60 /* PlaylistItemDetailVC.swift */; };
+		BDBB8FBE2218B9E400BAA8A4 /* favorite.json in Resources */ = {isa = PBXBuildFile; fileRef = BDBB8FBD2218B9E400BAA8A4 /* favorite.json */; };
 		D3BB34B8E1AC4AD6D5A85A60 /* Pods_Swift_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A071CBE5DECE4A7952C72641 /* Pods_Swift_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		BD40B84A21BDF963007C9FC2 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BD9040BB2203E3DE009A4A60 /* PlaylistItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemCell.swift; sourceTree = "<group>"; };
 		BD9040BD2203FEBF009A4A60 /* PlaylistItemDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemDetailVC.swift; sourceTree = "<group>"; };
+		BDBB8FBD2218B9E400BAA8A4 /* favorite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favorite.json; sourceTree = "<group>"; };
 		FCD15E08A0EA99B182F49539 /* Pods-Swift News.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift News.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift News/Pods-Swift News.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 				BD40B83D21BDD0F9007C9FC2 /* Assets.xcassets */,
 				BD40B83F21BDD0F9007C9FC2 /* LaunchScreen.storyboard */,
 				BD40B84221BDD0F9007C9FC2 /* Info.plist */,
+				BDBB8FBD2218B9E400BAA8A4 /* favorite.json */,
 				BD40B84A21BDF963007C9FC2 /* Models.swift */,
 			);
 			path = "Swift News";
@@ -158,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD40B84121BDD0F9007C9FC2 /* LaunchScreen.storyboard in Resources */,
+				BDBB8FBE2218B9E400BAA8A4 /* favorite.json in Resources */,
 				BD40B83E21BDD0F9007C9FC2 /* Assets.xcassets in Resources */,
 				BD40B83C21BDD0F7007C9FC2 /* Main.storyboard in Resources */,
 			);
