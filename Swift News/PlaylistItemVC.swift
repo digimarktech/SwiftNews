@@ -99,7 +99,7 @@ extension PlaylistItemVC: UISearchResultsUpdating {
 	func updateSearchResults(for searchController: UISearchController) {
 		if let text = searchController.searchBar.text, text.count > 0 {
 			filteredPlaylistItems = playlistItems.filter {
-				$0.title.contains(text) || $0.description.contains(text)
+				$0.title.lowercased().contains(text.lowercased()) || $0.description.lowercased().contains(text.lowercased())
 			}
 		} else {
 			filteredPlaylistItems = playlistItems
