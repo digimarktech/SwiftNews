@@ -25,10 +25,13 @@ class PlaylistItemVC: UIViewController {
 		// Setup the Search Controller
         let searchController = UISearchController(searchResultsController: nil)
         navigationItem.searchController = searchController
+		navigationItem.hidesSearchBarWhenScrolling = false
 		searchController.searchResultsUpdater = self
 		searchController.obscuresBackgroundDuringPresentation = false
 		searchController.searchBar.placeholder = "Search Swift News"
 		definesPresentationContext = true
+		
+		navigationController?.navigationBar.isTranslucent = false
 		
 		downloadVideoData()
 	}
@@ -43,14 +46,13 @@ class PlaylistItemVC: UIViewController {
 			guard let data = data else { return }
 			
 			let decoder = JSONDecoder()
-			//decoder.dateDecodingStrategy = .iso8601
 			do {
 				let response = try decoder.decode(ServerResponse.self, from: data)
 				DispatchQueue.main.async {
-					for item in response.items {
+					response.items.forEach({ item in
 						self.playlistItems.append(item)
 						self.filteredPlaylistItems.append(item)
-					}
+					})
 					self.tableView.reloadData()
 				}
 			} catch {
@@ -104,7 +106,6 @@ extension PlaylistItemVC: UISearchResultsUpdating {
 		} else {
 			filteredPlaylistItems = playlistItems
 		}
-		
 		tableView.reloadData()
 	}
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import YouTubePlayer
+import SafariServices
 
 class PlaylistItemDetailVC: UIViewController {
 	
@@ -19,6 +20,7 @@ class PlaylistItemDetailVC: UIViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
 		
+		textView.delegate = self
 		playerView.delegate = self
 		playerView.loadVideoID(playlistItem.videoId)
 		textView.text = playlistItem.description
@@ -26,9 +28,19 @@ class PlaylistItemDetailVC: UIViewController {
 
 }
 
+// MARK: - YouTubePlayerDelegate
 extension PlaylistItemDetailVC: YouTubePlayerDelegate {
 	
 	func playerReady(_ videoPlayer: YouTubePlayerView) {
 		
+	}
+}
+
+// MARK: - UITextViewDelegate
+extension PlaylistItemDetailVC: UITextViewDelegate {
+	func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+		let safariVC = SFSafariViewController(url: URL)
+		present(safariVC, animated: true, completion: nil)
+		return false
 	}
 }
